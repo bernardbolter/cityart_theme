@@ -1,0 +1,123 @@
+.navigation
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  z-index: 1000
+  top: 0
+  position: fixed
+  background: rgba(255, 255, 255, 0.5)
+  width: 100%
+  padding: 0 3%
+
+  +min-screen($nav-break)
+    justify-content: space-around
+
+.logo
+  width: 200px
+  height: 50px
+  margin: 10px 0
+  transition: all 1s ease-in-out
+
+  svg
+    width: 200px
+    height: 50px
+
+.logo-open
+  margin-top: 150px
+
+.container-open
+  top: 0 !important
+
+.nav-container
+  width: 100%
+  top: -200px
+  position: absolute
+  list-style: none
+  align-self: center
+  font-family: $font-500
+  transition: all 1s ease-in-out
+
+  +min-screen($nav-break)
+    top: 0
+    position: relative
+
+  ul
+    list-style: none
+    padding: 0
+    margin: 15px 0 0 0
+
+    +min-screen($nav-break)
+      margin: 5px 0 0 0
+
+    li
+      width: 100%
+      text-align: center
+      height: 25px
+
+      +min-screen($nav-break)
+        display: inline-block
+        width: auto
+
+      a
+        text-decoration: none
+        font-size: 18px
+        font-family: $font-500
+        color: #333
+        letter-spacing: 0.05em
+
+        +min-screen($nav-break)
+          font-size: 16px
+          margin: 0 0 0 25px
+
+        &:hover
+          color: #000
+          border-bottom: 1px solid #000
+          transition: color 2s ease
+
+.nav-button
+  position: relative
+  height: 27px
+  width: 35px
+  cursor: pointer
+  z-index: 100
+  transition: opacity .25s ease
+  margin: 20px 5px 0 0
+  transition: margin 1s ease-in-out
+
+  +min-screen($nav-break)
+    display: none
+
+  &:hover
+    opacity: .7
+
+  &.button-active
+    margin-top: 157px
+
+    .top
+      transform: translateY(11px) translateX(0) rotate(45deg)
+      background: #333
+
+    .middle
+      opacity: 0
+      background: #333
+
+    .bottom
+      transform: translateY(-11px) translateX(0) rotate(-45deg)
+      background: #333
+
+  span
+    background: #333
+    border: none
+    height: 5px
+    width: 100%
+    position: absolute
+    top: 0
+    left: 0
+    transition:  all .35s ease
+    cursor: pointer
+
+    &:nth-of-type(2)
+      top: 11px
+
+    &:nth-of-type(3)
+      top: 22px
