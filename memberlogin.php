@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: memberlogin
+ * Template Name: Members Login
  */
 ?>
 

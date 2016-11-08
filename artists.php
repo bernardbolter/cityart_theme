@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Artists
+ * Template Name: Artists Index
  */
 ?>
 

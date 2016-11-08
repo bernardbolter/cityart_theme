@@ -1,0 +1,112 @@
+.home
+  width: 100%
+  margin: 0
+  padding: 0
+  background: white
+
+  +e(image)
+    width: 90%
+    margin: 5% 5% 0
+    padding: 0
+    height: 300px
+    position: relative
+    overflow: hidden
+
+    +min-screen(500px)
+      height: 400px
+
+    +min-screen(750px)
+      height: 500px
+
+    +min-screen(1000px)
+      height: 600px
+
+    img
+      width: 100%
+      position: absolute
+      margin-top: -30px
+
+      +min-screen(500px)
+        margin-top: -170px
+
+      +min-screen(750px)
+        margin-top: -270px
+
+      +min-screen(1000px)
+        margin-top: -370px
+
+    +m(artist)
+      font-size: 14px
+      font-weight: 300
+      color: #666
+      text-align: left
+      margin: 0
+      padding: 1% 0 5%
+
+
+  +e(wrap)
+    width: 90%
+    margin: 0 5% 5%
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+
+  +e(info)
+    width: 100%
+    display: block
+
+    +min-screen($desktop-break)
+      width: 70%
+
+    +m(title)
+      font-size: 35px
+      font-weight: 300
+      margin: 1% 0
+
+    +m(date)
+      font-weight: 700
+
+    +m(reception)
+      font-size: 30px
+      font-weight: 300
+      margin: 1% 0 3%
+
+    +m(time)
+      font-weight: 700
+
+    +m(contact)
+      font-size: 18px
+      font-weight: 300
+      margin: 5px 0
+
+  +e(email)
+    display: none
+
+    +min-screen($desktop-break)
+      width: 300px
+      display: block
+      border: 1px solid black
+      height: 140px
+      margin-top: 5%
+
+    +m(signup)
+      font-size: 18px
+      font-weight: 400
+      text-align: center
+
+    +m(input)
+      border-top: none
+      border-left: none
+      border-right: none
+      border-bottom: 1px solid black
+      background: url(img/mail-icon.png) no-repeat 7px 5px
+      padding-left: 37px
+      box-shadow: none
+      width: 180px
+      margin-left: 38px
+
+    +m(button)
+      background: white
+      border: 1px solid #333
+      box-shadow: none
+      font-size: 12px

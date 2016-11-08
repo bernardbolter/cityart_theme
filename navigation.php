@@ -5,12 +5,12 @@
     <span class="nav-button-bottom"></span>
   </div>
   <a href="#" class="navigation__logo" id="logo">
-    <img src="<?php echo get_template_directory_uri(); ?>/img/cityart_logo.png" />
+    <img src="<?php echo get_template_directory_uri(); ?>/img/cityart_logo.jpg" />
   </a>
   <div class="navigation__container" id="navigation-container">
     <ul class="navigation__container--links" id="links">
       <li><a href=<?php get_template_directory_uri() ?>"/exhibitions">Exhibitions</a></li>
-      <li><a href=<?php get_template_directory_uri() ?>"/artists">Artists</a></li>
+      <li><a href=<?php get_template_directory_uri() ?>"/artist-index">Artists</a></li>
       <li><a href=<?php get_template_directory_uri() ?>"/showhere">Show Here</a></li>
       <li><a href=<?php get_template_directory_uri() ?>"/aboutus">About Us</a></li>
       <li><a href=<?php get_template_directory_uri() ?>"/memberlogin">Member Login</a></li>
@@ -24,3 +24,6 @@
     </div>
   </div>
 </nav>
+
+<!-- THIS CLASS WRAPS THE CONTENT OF THE PAGES FOR THE MOVEMNET OF THE MOBILE NAVIAGTION - CLOSES IN FOOTER -->
+<div class="site-wrapper" id="site-wrap">

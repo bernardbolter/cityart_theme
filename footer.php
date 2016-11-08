@@ -1,3 +1,4 @@
+</div> <!-- CLOSING OF site-wrapper CLASS AT THE BOTTOM ON NAVIGATION FILE -->
     <footer>
 
     </footer>
