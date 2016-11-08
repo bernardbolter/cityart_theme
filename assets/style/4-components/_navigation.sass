@@ -8,7 +8,7 @@
   background: rgba(255, 255, 255, 0.5)
   width: 100%
 
-  +min-screen($nav-break)
+  +min-screen($tablet-break)
     justify-content: space-around
 
   +e(logo)
@@ -17,11 +17,20 @@
     text-align: right
     background: white
 
+    +min-screen($tablet-break)
+      width: auto
+
     img
       width: 150px
       height: 43px
 
-    +m(open)
+      +min-screen($mobile-break)
+        width: 175px
+        height: 50px
+
+      +min-screen($desktop-break)
+        width: 200px
+        height: 57px
 
   +e(button)   // BUTTON CLASSES
     position: absolute
@@ -34,7 +43,7 @@
     transition: opacity .25s ease
     transition: margin 1s ease-in-out
 
-    +min-screen($nav-break)
+    +min-screen($tablet-break)
       display: none
 
     +m(active)
@@ -84,15 +93,25 @@
     +m(open)
       top: 50px !important
 
-    +min-screen($nav-break)
+      +min-screen($tablet-break)
+        top: auto !important
+
+    +min-screen($tablet-break)
       top: 0
       position: relative
+      border-bottom: none
+      padding-bottom: 0
+      height: 70px
+      line-height: 70px
+
+    +min-screen($desktop-break)
+      height: 77px
 
     ul
       list-style: none
       padding: 0
 
-      +min-screen($nav-break)
+      +min-screen($tablet-break)
         margin: 5px 0 0 0
 
       li
@@ -101,7 +120,7 @@
         margin: 0 0 0 20px
         height: 25px
 
-        +min-screen($nav-break)
+        +min-screen($tablet-break)
           display: inline-block
           width: auto
 
@@ -110,18 +129,43 @@
           font-size: 14px
           color: #333
           letter-spacing: 0.05em
+          cursor: pointer
+          -webkit-backface-visibility: hidden; // prevents an annoying flicker on hover
+          position: relative
+          padding-bottom: 1px
 
-          +min-screen($nav-break)
-            font-size: 16px
-            margin: 0 0 0 25px
+          &:before
+            background-color: #333
+            content: ""
+            height: 1px
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            transform: scaleX(0)
+            transition: all 0.3s ease-in-out 0s
+
+          &:hover:before
+            transform: scaleX(1)
 
           &:hover
             color: #000
-            border-bottom: 1px solid #000
-            transition: color 2s ease
+
+          +min-screen($tablet-break)
+            font-size: 13px
+            margin: 0
+            padding-bottom: 3px
+
+          +min-screen($desktop-break)
+            font-size: 18px
+            margin: 0 0 0 10px
+            padding-bottom: 5px
 
   +e(mobile)
     display: block
+
+    +min-screen($tablet-break)
+      display: none
 
     +m(line)
       width: 50px
