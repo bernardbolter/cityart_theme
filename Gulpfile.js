@@ -85,7 +85,7 @@ gulp.task('svg', function() {
     	.pipe(rename({prefix: 'svg-'}))
     	.pipe(svgmin())
     	.pipe(svgstore())
-    	.pipe(rename('inline-defs.svg.php'))
+    	.pipe(rename('defs.svg'))
       .pipe(livereload(server))
     	.pipe(gulp.dest('./svg'));
 });

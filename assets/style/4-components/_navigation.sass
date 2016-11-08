@@ -1,123 +1,174 @@
 .navigation
   display: flex
   flex-direction: row
-  justify-content: space-between
+  justify-content: center
   z-index: 1000
   top: 0
   position: fixed
   background: rgba(255, 255, 255, 0.5)
   width: 100%
-  padding: 0 3%
 
   +min-screen($nav-break)
     justify-content: space-around
 
-.logo
-  width: 200px
-  height: 50px
-  margin: 10px 0
-  transition: all 1s ease-in-out
+  +e(logo)
+    padding: 15px 15px 0 20px
+    width: 100%
+    text-align: right
+    background: white
 
-  svg
-    width: 200px
-    height: 50px
+    img
+      width: 150px
+      height: 43px
 
-.logo-open
-  margin-top: 150px
+    +m(open)
 
-.container-open
-  top: 0 !important
-
-.nav-container
-  width: 100%
-  top: -200px
-  position: absolute
-  list-style: none
-  align-self: center
-  font-family: $font-500
-  transition: all 1s ease-in-out
-
-  +min-screen($nav-break)
-    top: 0
-    position: relative
-
-  ul
-    list-style: none
-    padding: 0
-    margin: 15px 0 0 0
+  +e(button)   // BUTTON CLASSES
+    position: absolute
+    top: 20px
+    left: 20px
+    width: 25px
+    height: 25px
+    cursor: pointer
+    z-index: 100
+    transition: opacity .25s ease
+    transition: margin 1s ease-in-out
 
     +min-screen($nav-break)
-      margin: 5px 0 0 0
+      display: none
 
-    li
+    +m(active)
+
+      .nav-button-top
+        transform: translateY(10px) translateX(0) rotate(45deg)
+        background: #333
+
+      .nav-button-middle
+        opacity: 0
+        background: #333
+
+      .nav-button-bottom
+        transform: translateY(-10px) translateX(0) rotate(-45deg)
+        background: #333
+
+    span
+      background: #333
+      border: none
+      height: 3px
       width: 100%
-      text-align: center
-      height: 25px
+      position: absolute
+      top: 0
+      left: 0
+      transition:  all .35s ease
+      cursor: pointer
+
+      &:nth-of-type(2)
+        top: 10px
+
+      &:nth-of-type(3)
+        top: 20px
+
+  +e(container)  // NAVIGATION MENU CLASSES
+    width: 100%
+    z-index: -1
+    top: -190px
+    position: absolute
+    list-style: none
+    align-self: center
+    transition: all 1s ease-in-out
+    background: white
+    border-bottom: 1px solid black
+    background: white
+    padding-bottom: 25px
+
+    +m(open)
+      top: 50px !important
+
+    +min-screen($nav-break)
+      top: 0
+      position: relative
+
+    ul
+      list-style: none
+      padding: 0
 
       +min-screen($nav-break)
-        display: inline-block
-        width: auto
+        margin: 5px 0 0 0
 
-      a
-        text-decoration: none
-        font-size: 18px
-        font-family: $font-500
-        color: #333
-        letter-spacing: 0.05em
+      li
+        width: 100%
+        text-align: left
+        margin: 0 0 0 20px
+        height: 25px
 
         +min-screen($nav-break)
-          font-size: 16px
-          margin: 0 0 0 25px
+          display: inline-block
+          width: auto
 
-        &:hover
-          color: #000
-          border-bottom: 1px solid #000
-          transition: color 2s ease
+        a
+          text-decoration: none
+          font-size: 14px
+          color: #333
+          letter-spacing: 0.05em
 
-.nav-button
+          +min-screen($nav-break)
+            font-size: 16px
+            margin: 0 0 0 25px
+
+          &:hover
+            color: #000
+            border-bottom: 1px solid #000
+            transition: color 2s ease
+
+  +e(mobile)
+    display: block
+
+    +m(line)
+      width: 50px
+      height: 1px
+      background: #999
+      margin: 0 0 0 20px
+
+    +m(form-title)
+      font-size: 12px
+      font-weight: 200
+      margin: 15px 0 10px 20px
+      padding: 0
+      color: #666
+
+    +m(email-form)
+      width: 90%
+      margin: 0 5%
+      padding: 0
+      display: flex
+      flex-direction: row
+
+    +m(enter-email)
+      width: 75%
+      background: url(img/mail-icon.png) no-repeat 7px 5px
+      padding-left: 37px
+      box-shadow: none
+      border: 1px solid #333
+      margin-right: 10px
+
+    +m(signup-button)
+      width: 25%
+      background: white
+      border: 1px solid #333
+      box-shadow: none
+      font-size: 12px
+
+      &:hover
+        background: #666
+        color: white
+
+  // STYLE TO MOVE CONTENT DOWN WHEN NAVIGATION IS CLICK IN MOBILE
+.site-wrapper
+  margin-top: 0
+  transition: all 1s ease-in-out
   position: relative
-  height: 27px
-  width: 35px
-  cursor: pointer
-  z-index: 100
-  transition: opacity .25s ease
-  margin: 20px 5px 0 0
-  transition: margin 1s ease-in-out
+  display: block
+  width: 100%
 
-  +min-screen($nav-break)
-    display: none
-
-  &:hover
-    opacity: .7
-
-  &.button-active
-    margin-top: 157px
-
-    .top
-      transform: translateY(11px) translateX(0) rotate(45deg)
-      background: #333
-
-    .middle
-      opacity: 0
-      background: #333
-
-    .bottom
-      transform: translateY(-11px) translateX(0) rotate(-45deg)
-      background: #333
-
-  span
-    background: #333
-    border: none
-    height: 5px
-    width: 100%
-    position: absolute
-    top: 0
-    left: 0
-    transition:  all .35s ease
-    cursor: pointer
-
-    &:nth-of-type(2)
-      top: 11px
-
-    &:nth-of-type(3)
-      top: 22px
+.site-wrapper-open
+  margin-top: 240px

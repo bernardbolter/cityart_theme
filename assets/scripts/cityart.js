@@ -1,7 +1,8 @@
-$('#nav-toggle').click(function() {
-   $(this).toggleClass('button-active');
-   $('#links').toggleClass('links-open');
-   $('#nav-container').toggleClass('container-open');
-   $('#navigation').toggleClass('navigation-open');
-   $('#logo').toggleClass('logo-open');
+$('#navigation-button').click(function() {
+   $(this).toggleClass('navigation__button--active');
+   $('#links').toggleClass('navigation__container--open');
+   $('#navigation-container').toggleClass('navigation__container--open');
+   $('#navigation').toggleClass('navigation__open');
+   $('#logo').toggleClass('navigation__logo--open');
+   $('#site-wrap').toggleClass('site-wrapper-open');
 });

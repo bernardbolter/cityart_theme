@@ -1,31 +1,5 @@
-@font-face {
-    font-family: 'museo300';
-    src: url('fonts/museo300-regular-webfont.woff2') format('woff2'),
-         url('fonts/museo300-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'museo500';
-    src: url('fonts/museo500-regular-webfont.woff2') format('woff2'),
-         url('fonts/museo500-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'museo700';
-    src: url('fonts/museo700-regular-webfont.woff2') format('woff2'),
-         url('fonts/museo700-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-$font-300: 'museo300', sans-serif;
-$font-500: 'museo500', sans-serif;
-$font-700: 'museo700', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 html {
-  font-family: $font-300;
+  font-family: 'Open Sans', sans-serif;
 }
