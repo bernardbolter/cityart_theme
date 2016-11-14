@@ -1,5 +1,9 @@
 node_modules/
 fonts/
+assets/fonts/
+img/
+assets/images/
+svg/
 .DS_store
 ehthumbs.db
 Thumbs.db

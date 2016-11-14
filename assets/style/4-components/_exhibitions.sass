@@ -1,0 +1,32 @@
+.exhibitions
+  width: 90%
+  margin: 100px 5%
+  display: flex
+  flex-direction: row
+  justify-content: center
+
+  +e(list)
+    width: 20%
+    margin-top: 40px
+
+    +m(current)
+      font-size: 18px
+      font-weight: 700
+      text-align: right
+      margin: 0
+      padding: 0
+
+    +m(past)
+      font-size: 16px
+      font-weight: 300
+      text-align: right
+      margin: 0
+      padding: 0
+
+  +e(images)
+    width: 50%
+    padding: 3%
+
+    img
+      width: 100%
+      border: 1px solid #666

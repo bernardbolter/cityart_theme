@@ -10,9 +10,17 @@
 
 <?php include 'navigation.php' ?>
 
-<div class="artists_wrap">
-  <h1 class="artist_heading">Exhibitions</h1>
-
+<div class="exhibitions">
+  <div class="exhibitions__list">
+    <p class="exhibitions__list--current">Current Show</p>
+    <p class="exhibitions__list--past">Past Shows</p>
+  </div>
+  <div class="exhibitions__images">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/2016-10-front.jpg" />
+  </div>
+  <div class="exhibitions__images">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/2016-10-back.jpg" />
+  </div>
 </div>
 
 <?php include 'footer.php' ?>

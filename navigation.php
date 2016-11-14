@@ -4,16 +4,16 @@
     <span class="nav-button-middle"></span>
     <span class="nav-button-bottom"></span>
   </div>
-  <a href="#" class="navigation__logo" id="logo">
+  <a href="<?php echo home_url(); ?>" class="navigation__logo" id="logo">
     <img src="<?php echo get_template_directory_uri(); ?>/img/cityart_logo.jpg" />
   </a>
   <div class="navigation__container" id="navigation-container">
     <ul class="navigation__container--links" id="links">
-      <li><a href=<?php get_template_directory_uri() ?>"/exhibitions">Exhibitions</a></li>
-      <li><a href=<?php get_template_directory_uri() ?>"/artist-index">Artists</a></li>
-      <li><a href=<?php get_template_directory_uri() ?>"/showhere">Show Here</a></li>
-      <li><a href=<?php get_template_directory_uri() ?>"/aboutus">About Us</a></li>
-      <li><a href=<?php get_template_directory_uri() ?>"/memberlogin">Member Login</a></li>
+      <li><a href="<?php echo home_url(); ?>/exhibitions">Exhibitions</a></li>
+      <li><a href="<?php echo home_url(); ?>/artist-index">Artists</a></li>
+      <li><a href="<?php echo home_url(); ?>/showhere">Show Here</a></li>
+      <li><a href="<?php echo home_url(); ?>/aboutus">About Us</a></li>
+      <li><a href="<?php echo home_url(); ?>/memberlogin">Member Login</a></li>
     </ul>
   <div class="navigation__mobile">
     <div class="navigation__mobile--line"></div>
