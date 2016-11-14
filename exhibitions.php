@@ -11,16 +11,17 @@
 <?php include 'navigation.php' ?>
 
 <div class="exhibitions">
-  <div class="exhibitions__list">
-    <p class="exhibitions__list--current">Current Show</p>
-    <p class="exhibitions__list--past">Past Shows</p>
-  </div>
+<?php $homepage_loop = new WP_Query(array( 'post_type' => 'openings', 'posts_per_page' => -1 ) ); ?>
+<?php while ( $homepage_loop->have_posts() ) : $homepage_loop->the_post(); ?>
   <div class="exhibitions__images">
-    <img src="<?php echo get_template_directory_uri(); ?>/img/2016-10-front.jpg" />
+    <h2><?php the_title(); ?></h2>
+    <?php $front_image = get_field('exhibition_postcard_front'); ?>
+    <img src="<?php echo $front_image['sizes']['large'] ?>" />
+    <?php $back_image = get_field('exhibition_postcard_back'); ?>
+    <img src="<?php echo $back_image['sizes']['large'] ?>" />
+    <div class="exhibitions__images--line"></div>
   </div>
-  <div class="exhibitions__images">
-    <img src="<?php echo get_template_directory_uri(); ?>/img/2016-10-back.jpg" />
-  </div>
+<?php endwhile; wp_reset_query(); ?>
 </div>
 
 <?php include 'footer.php' ?>
