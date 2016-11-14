@@ -10,7 +10,7 @@
   <div class="navigation__container" id="navigation-container">
     <ul class="navigation__container--links" id="links">
       <li><a href="<?php echo home_url(); ?>/exhibitions">Exhibitions</a></li>
-      <li><a href="<?php echo home_url(); ?>/artist-index">Artists</a></li>
+      <li><a href="<?php echo home_url(); ?>/artists-index">Artists</a></li>
       <li><a href="<?php echo home_url(); ?>/showhere">Show Here</a></li>
       <li><a href="<?php echo home_url(); ?>/aboutus">About Us</a></li>
       <li><a href="<?php echo home_url(); ?>/memberlogin">Member Login</a></li>
