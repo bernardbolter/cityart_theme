@@ -1,12 +1,12 @@
 .artist
   width: 94%
-  margin: 20px 3%
+  margin: 80px 3%
   display: block
 
   +min-screen($artist-break)
     display: block
     max-width: 1200px
-    margin: 30px auto
+    margin: 80px auto
 
 
   +e(header)
@@ -90,6 +90,7 @@
     display: flex
     flex-direction: row
     justify-content: space-between
+    flex-wrap: wrap
 
     +min-screen($artist-break)
       justify-content: flex-start
@@ -103,6 +104,9 @@
       +min-screen($artist-break)
         width: 150px
         margin: 0 20px 0 0
+
+        &:hover
+          transition: opacity .5s ease-in-out
 
       &:hover
         opacity: 1
