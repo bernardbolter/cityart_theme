@@ -25,7 +25,7 @@
     justify-content: center
 
     +min-screen($tablet-break)
-      width: 18%
+      width: 160px
       flex-direction: column
       margin: 50px 0 0 0
       justify-content: flex-start
@@ -122,18 +122,45 @@
       width: auto
       text-align: right
 
+  +e(categories)
+    list-style: none
+    margin: 0
+    padding: 0
+
+    li
+      text-align: right
+
+      a
+        font-size: 13px
+        text-transform: uppercase
+        letter-spacing: 0.05em
+        color: $light-dark
+        text-decoration: none
+        width: 100%
+        margin: 0
+
+        &:hover
+          color: $dark
+          span
+            border: none
+            background: $accent-color
+
   +e(links)
     text-align: right
     text-decoration: none
     font-size: 13px
-    color: #000
     text-transform: uppercase
     width: 90%
-    margin: 0 5%
+    margin: 0 5% 5px
     letter-spacing: 0.05em
     color: $light-dark
 
+    +min-screen($tablet-break)
+      width: 100%
+      margin: 0 0 5px
+
     &:hover
+      color: $dark
       span
         border: none
         background: $accent-color
@@ -143,6 +170,7 @@
     height: 10px
     border: 1px solid #000
     display: inline-block
+    margin: 0 0 0 5px
 
   +e(wrapper)
     width: 100%

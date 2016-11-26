@@ -31,3 +31,5 @@ $('#artwork_3').click(function() {
     $("#artwork_hero_info").text( artist_image_data[0][8] ).fadeIn();
   });
 });
+
+$('ul.artists-index__categories li a').append( "<span class='artists-index__square'></span>");
