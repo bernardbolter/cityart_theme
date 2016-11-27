@@ -15,10 +15,37 @@
            }
       }
 
+    if ($_GET['sort'] && !empty($_GET['sort']))
+
+      {
+        $sort = $_GET['sort'];
+        $orderby = '';
+        $order = '';
+        if ($sort == 'date') {
+            $orderby = $sort;
+            $order = "";
+          }
+        if ($sort == 'ASC') {
+            $orderby = "title";
+            $order = $sort;
+          }
+        if ($sort == 'DESC') {
+            $orderby = "title";
+            $order = $sort;
+          }
+        if ($sort == 'rand') {
+            $orderby = "rand";
+            $order = "";
+          }
+      }
+
+
       $args = array(
         'post_type'     => 'artist',
         'post_per_page' => -1,
-        'cat' => $medium_args
+        'cat' => $medium_args,
+        'orderby' => $orderby,
+        'order' =>$order
       );
 
  ?>
@@ -36,12 +63,30 @@
    <div id="artwork-loop" class="artists-index__wrapper">
      <?php print_r(array_values($medium_args)); ?>
     <?php
+      if ($sort == 'ASC') {
+        add_filter( 'posts_orderby' , 'posts_orderby_lastname' );
+      }
+      if ($sort == 'DESC') {
+        add_filter( 'posts_orderby' , 'posts_orderby_lastname_desc');
+      }
     $art_filter = new WP_Query($args);
       while($art_filter -> have_posts()) : $art_filter -> the_post();
      ?>
-     <h1><?php the_title(); ?> </h1>
+     <a class="artists-index__artlist" href="<?php the_permalink(); ?>">
+       <?php $artist_image = get_field('artist_image_1'); ?>
+       <img src="<?php echo $artist_image['sizes']['thumbnail']?>" />
+       <h2 class="artists-index__artlist--name"><?php the_title(); ?></h2>
+     </a>
 
-   <?php endwhile; wp_reset_query(); ?>
+   <?php
+         if ($sort == 'ASC') {
+           remove_filter( 'posts_orderby' , 'posts_orderby_lastname' );
+         }
+         if ($sort == 'DESC') {
+           remove_filter( 'posts_orderby' , 'posts_orderby_lastname_desc');
+         }
+        endwhile; wp_reset_query();
+    ?>
 
   </div>
 </div>

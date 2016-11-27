@@ -9,8 +9,9 @@
   <div href="#" class="artists-index__artwork">
     <a href="#" id="artwork-sorting-header" class="artists-index__artwork--header">Artwork<img src="<?php echo get_template_directory_uri(); ?>/img/chevron-outline.png" /></a>
     <div class="artists-index__artwork--link-wrap">
+      <h3>Filter By</h3>
       <form action="/artists-filter" method="GET">
-        <ul>
+          <ul class="artists-index__artwork--categories">
           <?php
           $argues = array(
             'order_by' => 'name',
@@ -20,17 +21,19 @@
 
           foreach ( $categories as $category ){
 
-            echo '<input type="checkbox" name="medium[]" value="' . $category->cat_ID . '">'. $category->name . '<br />';
+            echo '<li><input type="checkbox" name="medium[]" value="' . $category->cat_ID . '">'. $category->name . '</li>';
           }
           ?>
 
-
+      </ul>
       <h3>Sort By</h3>
-      <a href="#" class="artists-index__links">Recently Added <span class="artists-index__square"></span></a>
-      <a href="#" class="artists-index__links">Artist A-Z <span class="artists-index__square"></span></a>
-      <a href="#" class="artists-index__links">Artist Z-A <span class="artists-index__square"></span></a>
-      <a href="#" class="artists-index__links">Random <span class="artists-index__square"></span></a>
-      <button type="submit" name="">Search</button>
+      <ul class="artits-index__artwork--sort">
+        <li><input type="radio" name="sort" value="date">Recently Added</li>
+        <li><input type="radio" name="sort" value="ASC">Artist A-Z</li>
+        <li><input type="radio" name="sort" value="DESC">Artist Z-A</li>
+        <li><input type="radio" name="sort" value="rand">Random</li>
+      </ul>
+      <button type="submit" name="">GO</button>
     </form>
 
     </div>
