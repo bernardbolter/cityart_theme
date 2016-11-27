@@ -1,6 +1,11 @@
 </div> <!-- CLOSING OF site-wrapper CLASS AT THE BOTTOM ON NAVIGATION FILE -->
-    <footer>
-
+    <footer class="footer">
+      <div class="footer__icons">
+        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo_test.png" /></a>
+        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo_test.png" /></a>
+        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo_test.png" /></a>
+      </div>
+      <p class="footer__info">828 Valencia Street &#8226; San Francisco &#8226; 415-970-9900</p>
     </footer>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/mashup.js"></script>
     <?php if ( is_singular( 'artist' ) ) { ?>

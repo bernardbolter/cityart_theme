@@ -5,6 +5,13 @@
 ?>
 
 <?php
+
+    if($_GET['search_text'] && !empty($_GET['search_text']))
+
+      {
+          $text = $_GET['search_text'];
+      }
+
     if($_GET['medium'] && !empty($_GET['medium']))
 
       {
@@ -39,13 +46,13 @@
           }
       }
 
-
       $args = array(
         'post_type'     => 'artist',
-        'post_per_page' => -1,
+        'posts_per_page' => -1,
         'cat' => $medium_args,
         'orderby' => $orderby,
-        'order' =>$order
+        'order' =>$order,
+        's' => $text
       );
 
  ?>
@@ -61,7 +68,6 @@
   <?php include 'artists-navigation.php' ?>
 
    <div id="artwork-loop" class="artists-index__wrapper">
-     <?php print_r(array_values($medium_args)); ?>
     <?php
       if ($sort == 'ASC') {
         add_filter( 'posts_orderby' , 'posts_orderby_lastname' );
@@ -70,6 +76,9 @@
         add_filter( 'posts_orderby' , 'posts_orderby_lastname_desc');
       }
     $art_filter = new WP_Query($args);
+    if (!empty($text) && !($art_filter->have_posts())) {
+      echo '<h2 class="artists-index__nosearch">No Match for Search: ' . $text . '</h2>';
+    }
       while($art_filter -> have_posts()) : $art_filter -> the_post();
      ?>
      <a class="artists-index__artlist" href="<?php the_permalink(); ?>">

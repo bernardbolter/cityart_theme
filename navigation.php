@@ -13,7 +13,7 @@
       <li><a href="<?php echo home_url(); ?>/artists">Artists</a></li>
       <li><a href="<?php echo home_url(); ?>/howtojoin">How to Join</a></li>
       <li><a href="<?php echo home_url(); ?>/aboutus">About Us</a></li>
-      <li><a href="<?php echo home_url(); ?>/memberlogin">Member Login</a></li>
+      <li><a href="<?php echo home_url(); ?>/wp-admin">Member Login</a></li>
     </ul>
   <div class="navigation__mobile">
     <div class="navigation__mobile--line"></div>

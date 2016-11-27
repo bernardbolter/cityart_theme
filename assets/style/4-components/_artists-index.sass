@@ -6,6 +6,11 @@
   flex-direction: column
   border-top: 1px solid $light-dark
 
+  +e(nosearch)
+    color: $light-dark
+    font-weight: 300
+    margin: 40px 0 0 40px
+
   +min-screen($tablet-break)
     flex-direction: row
     margin: 80px auto
@@ -15,162 +20,6 @@
     max-width: 1200px
     width: 74%
     margin: 30px 13%
-
-  +e(navigation)
-    width: 100%
-    margin: 0
-    padding: 0
-    display: flex
-    flex-direction: row
-    justify-content: center
-
-    +min-screen($tablet-break)
-      width: 160px
-      flex-direction: column
-      margin: 50px 0 0 0
-      justify-content: flex-start
-
-  +e(artists)
-    width: 50%
-
-    +m(header)
-      text-align: center
-      padding: 15px 0 15px 15px
-      margin: 0
-      font-size: 18px
-      font-weight: 600
-      color: $dark
-      border-right: 1px solid $light-dark
-      border-bottom: 1px solid $light-dark
-      width: 100%
-      display: block
-      text-decoration: none
-
-      +min-screen($tablet-break)
-        border-right: none
-        border-bottom: none
-        text-align: right
-        padding: 10px 12px 0 0
-
-      img
-        width: 22px
-        height: 22px
-        position: relative
-        top: 5px
-        left: 15px
-
-        +min-screen($tablet-break)
-          display: none
-
-    +m(link-wrap)
-      display: flex
-      flex-direction: column
-      justify-content: center
-      margin-top: 15px
-
-    +min-screen($tablet-break)
-      border-right: none
-      padding: 0
-      width: auto
-
-  +e(artwork)
-    width: 50%
-
-    +m(header)
-      text-align: center
-      padding: 15px 0 15px 15px
-      margin: 0
-      font-size: 18px
-      font-weight: 600
-      color: $dark
-      border-bottom: 1px solid $light-dark
-      width: 100%
-      display: block
-      text-decoration: none
-
-      +min-screen($tablet-break)
-        border-bottom: none
-        text-align: right
-        padding: 10px 12px 0 0
-
-      img
-        width: 22px
-        height: 22px
-        position: relative
-        top: 5px
-        left: 15px
-
-        +min-screen($tablet-break)
-          display: none
-
-    +m(link-wrap)
-      display: flex
-      flex-direction: column
-      justify-content: center
-      margin-top: 15px
-
-      h3
-        text-align: right
-        font-size: 13px
-        text-transform: uppercase
-        width: 90%
-        margin: 10px auto
-
-    +min-screen($tablet-break)
-      border-right: none
-      padding: 0
-      width: auto
-      text-align: right
-
-  +e(categories)
-    list-style: none
-    margin: 0
-    padding: 0
-
-    li
-      text-align: right
-
-      a
-        font-size: 13px
-        text-transform: uppercase
-        letter-spacing: 0.05em
-        color: $light-dark
-        text-decoration: none
-        width: 100%
-        margin: 0
-
-        &:hover
-          color: $dark
-          span
-            border: none
-            background: $accent-color
-
-  +e(links)
-    text-align: right
-    text-decoration: none
-    font-size: 13px
-    text-transform: uppercase
-    width: 90%
-    margin: 0 5% 5px
-    letter-spacing: 0.05em
-    color: $light-dark
-
-    +min-screen($tablet-break)
-      width: 100%
-      margin: 0 0 5px
-
-    &:hover
-      color: $dark
-      span
-        border: none
-        background: $accent-color
-
-  +e(square)
-    width: 10px
-    height: 10px
-    border: 1px solid #000
-    display: inline-block
-    margin: 0 0 0 5px
 
   +e(wrapper)
     width: 100%
