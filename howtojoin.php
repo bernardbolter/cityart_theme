@@ -1,10 +1,8 @@
 <?php
 /**
- * Template Name: Show Here
+ * Template Name: How to Join
  */
 ?>
-
-<?php include 'head.php' ?>
 
 <?php include 'header.php' ?>
 

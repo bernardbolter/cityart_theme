@@ -1,0 +1,78 @@
+.exhibition
+  width: 100%
+  margin-top: 75px
+
+  +e(nav)
+    margin-left: 185px
+
+    a
+      font-size: 13px
+      text-transform: uppercase
+      weight: 300
+      color: $light-dark
+      margin-right: 23px
+      text-decoration: none
+
+  +e(wrap)
+    display: flex
+    flex-direction: column
+    margin: 30px 0
+
+    +min-screen($desktop-break)
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+      width: 100%
+      margin: 30px 0
+
+  +e(front)
+    width: 100%
+    padding: 0 3%
+
+    +min-screen($desktop-break)
+      width: 50%
+      padding: 0 3%
+
+    img
+      width: 100%
+      border: 1px solid $super-light-dark
+
+  +e(back)
+    width: 100%
+    padding: 0 3%
+
+    +min-screen($desktop-break)
+      width: 50%
+      padding: 0 3%
+
+    img
+      width: 100%
+      border: 1px solid $super-light-dark
+
+  +e(artists)
+    width: 100%
+    padding: 0 3%
+
+    +min-screen($desktop-break)
+      width: 50%
+      padding: 0 3%
+
+    +m(title)
+      font-size: 13px
+      font-weight: 600
+      color: $dark
+
+    a
+      text-decoration: none
+      font-size: 13px
+      color: $light-dark
+      display: block
+
+      &:hover
+        text-decoration: underline
+
+    +m(extra)
+      font-size: 13px
+      color: $light-dark
+      margin: 0
+      padding: 0

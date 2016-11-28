@@ -4,8 +4,6 @@
  */
 ?>
 
-<?php include 'head.php' ?>
-
 <?php include 'header.php' ?>
 
 <?php include 'navigation.php' ?>
@@ -71,7 +69,7 @@
       <?php endif; ?>
 
       <?php if( get_field('artist_website') ): ?>
-        <h3 class="artist__header--website"><?php the_field('artist_website'); ?></h3>
+        <h3 class="artist__header--website"><a href="<?php the_field('artist_website'); ?>"><?php the_field('artist_website'); ?></a></h3>
       <?php endif; ?>
 
   	</div>
@@ -132,14 +130,13 @@
     <div class="artist__bio">
       <h2 class="artist__bio--title">Biography</h2>
       <p class="artist__bio--body">
-      <?php if( get_field('artist_profile_picture') ): ?>
-        <img src="<?php the_field('artist_profile_picture')?>" />
+      <?php if( !empty(get_field('artist_profile_picture') ) ): ?>
+        <?php $profile_picture = get_field('artist_profile_picture'); ?>
+        <img src="<?php echo $profile_picture['sizes']['thumbnail']; ?>" />
       <?php endif; ?>
       <?php the_field('artist_description') ?>
       </p>
     </div>
-
-
 
   <?php endwhile; ?>
 <?php endif; ?>
