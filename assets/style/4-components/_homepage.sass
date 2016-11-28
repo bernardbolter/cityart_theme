@@ -1,0 +1,142 @@
+.homepage
+  width: 100%
+  margin: 80px 0 40px
+  padding: 0
+  background: white
+
+  +min-screen($desktop-break)
+    margin: 80px 0 30px
+
+  +e(image)
+    text-decoration: none
+
+    img
+      width: 100%
+      height: auto
+
+    h1
+      font-size: 10px
+      font-weight: 300
+      color: #666
+      text-align: left
+      margin: 0
+      padding: 3px 0 15px
+
+    a
+      width: 100%
+
+      img
+        width: 100%
+
+
+  +e(info)
+    width: 100%
+    display: block
+    text-decoration: none
+
+    span
+      display: inline-block
+
+    +m(title)
+      font-size: 16px
+      font-weight: 300
+      margin: 1% 0
+      +min-screen($mobile-break)
+        font-size: 20px
+      +min-screen($tablet-break)
+        font-size: 24px
+      +min-screen($desktop-break)
+        font-size: 35px
+
+    +m(date)
+      font-weight: 600
+
+    +m(reception)
+      font-size: 14px
+      font-weight: 300
+      margin: 1% 0 3%
+      +min-screen($mobile-break)
+        font-size: 18px
+      +min-screen($tablet-break)
+        font-size: 20px
+      +min-screen($desktop-break)
+        font-size: 30px
+
+    +m(time)
+      font-weight: 600
+
+    +m(first)
+      font-size: 17px
+      font-weight: 300
+      font-style: italic
+      margin: 15px 0
+
+    +m(hours)
+      font-size: 17px
+      font-weight: 600
+      margin: 3px 0
+
+    +m(hours-light)
+      font-weight: 300
+
+    +m(closed)
+      font-size: 15px
+      font-weight: 300
+      margin: 20px 0 0  0
+
+    +m(december)
+      font-size: 10px
+      font-weight: 300
+      margin: 0
+
+  +e(email)
+    width: 100%
+    display: block
+    border: 1px solid $super-light-dark
+    height: 140px
+    margin-top: 5%
+
+    +min-screen($tablet-break)
+      width: 50%
+      float: right
+      margin: -140px 0 0 0
+      +clearfix()
+
+    +min-screen($desktop-break)
+      width: 40%
+      margin: -160px 0 0 0
+
+    +min-screen(1300px)
+      width: 350px
+      margin: -350px 0 0 0
+
+    +m(signup)
+      font-size: 18px
+      font-weight: 300
+      color: $super-light-dark
+      text-align: center
+
+    +m(wrap)
+      display: flex
+      flex-direction: row
+      justify-content: center
+      width: 90%
+      margin: 0 auto
+
+    +m(input)
+      border-top: none
+      border-left: none
+      border-right: none
+      border-bottom: 1px solid black
+      background: url(img/mail-icon.png) no-repeat 7px 5px
+      outline: none
+      box-shadow: none
+      width: 70%
+      padding: 0 0 0 35px
+
+    +m(button)
+      background: white
+      border: 1px solid #333
+      box-shadow: none
+      font-size: 12px
+      margin-left: 5px

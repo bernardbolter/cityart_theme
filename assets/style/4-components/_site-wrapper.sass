@@ -1,10 +1,21 @@
 .site-wrapper
-  margin-top: 0
   transition: all 1s ease-in-out
   position: relative
   display: block
-  width: 100%
+  width: 92%
+  margin: 0 4%
   +clearfix()
+
+  +min-screen($tablet-break)
+    width: 86%
+    margin: 0 7%
+
+  +min-screen($desktop-break)
+    width: 74%
+    margin: 0 13%
 
 .site-wrapper-open
   margin-top: 240px
+
+  +min-screen($tablet-break)
+    margin-top: 0

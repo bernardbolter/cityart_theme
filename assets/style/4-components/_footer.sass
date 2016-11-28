@@ -17,6 +17,10 @@
       width: 25px
       height: 25px
       margin: 0 10px
+      opacity: 0.8
+
+      &:hover
+        opacity: 1
 
       img
         width: 100%
@@ -28,3 +32,15 @@
     font-size: 12px
     color: $light-dark
     letter-spacing: 0.05em
+
+  +e(hide)
+    display: none
+
+    +min-screen($tablet-break)
+      display: inline-block
+
+  +e(break)
+    display: block
+
+    +min-screen($tablet-break)
+      display: inline-block

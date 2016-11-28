@@ -2,40 +2,49 @@
   display: flex
   flex-direction: row
   justify-content: center
-  z-index: 1000
   top: 0
   position: fixed
   background: rgba(255, 255, 255, 0.5)
   width: 100%
+  height: 65px
+  z-index: 2
 
   +min-screen($tablet-break)
     justify-content: space-around
 
-  +e(logo)
-    padding: 15px 15px 0 20px
+  +e(background)
     width: 100%
-    text-align: right
+    height: 65px
     background: white
+    position: fixed
+    z-index: 2
+
+  +e(logo)
+    padding: 0
+    margin: 0
+    width: 150px
+    height: 37px
+    text-align: left
+    background: white
+    position: absolute
+    left: 4%
+    top: 15px
+    z-index: 5
 
     +min-screen($tablet-break)
-      width: auto
+      left: 7%
+
+    +min-screen($desktop-break)
+      left: 13%
 
     img
       width: 150px
-      height: 43px
-
-      +min-screen($mobile-break)
-        width: 175px
-        height: 50px
-
-      +min-screen($desktop-break)
-        width: 200px
-        height: 57px
+      height: 37px
 
   +e(button)   // BUTTON CLASSES
     position: absolute
-    top: 20px
-    left: 20px
+    top: 25px
+    right: 5%
     width: 25px
     height: 25px
     cursor: pointer
@@ -77,52 +86,101 @@
       &:nth-of-type(3)
         top: 20px
 
-  +e(container)  // NAVIGATION MENU CLASSES
+  +e(container)  // NAVIGATION DESKTOP MENU CLASSES
+    display: none
+
+    +min-screen($tablet-break)
+      width: 100%
+      z-index: 4
+      position: relative
+      list-style: none
+      transition: all 1s ease-in-out
+      display: block
+      height: 70px
+      line-height: 70px
+
+      +min-screen($desktop-break)
+        width: 74%
+        margin: 0 13%
+
+    ul
+      list-style: none
+      padding: 0
+      margin: 9px 0 0 31%
+
+      +min-screen(800px)
+        margin: 9px 0 0 245px
+
+      +min-screen(900px)
+        margin: 9px 0 0 255px
+
+      +min-screen($desktop-break)
+        margin: 9px 0 0 185px
+
+      li
+        display: inline-block
+
+        a
+          text-decoration: none
+          font-size: 12px
+          color: #333
+          letter-spacing: 0.05em
+          cursor: pointer
+          -webkit-backface-visibility: hidden; // prevents an annoying flicker on hover
+          position: relative
+          padding-bottom: 1px
+          text-transform: uppercase
+          margin-right: 15px
+
+          +min-screen(900px)
+            margin-right: 22px
+
+          +min-screen($desktop-break)
+            margin-right: 28px
+            font-size: 13px
+
+          &:before
+            background-color: $super-light-dark
+            content: ""
+            height: 1px
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            transform: scaleX(0)
+            transition: all 0.1s ease-in-out 0s
+
+          &:hover:before
+            transform: scaleX(1)
+
+          &:hover
+            color: $dark
+
+  +e(mobile)
+    display: block
     width: 100%
-    z-index: -1
-    top: -190px
+    z-index: 1
+    top: -185px
     position: absolute
     list-style: none
     align-self: center
     transition: all 1s ease-in-out
     background: white
-    border-bottom: 1px solid black
+    border-bottom: 1px solid $super-light-dark
     background: white
-    padding-bottom: 25px
-
-    +m(open)
-      top: 50px !important
-
-      +min-screen($tablet-break)
-        top: auto !important
 
     +min-screen($tablet-break)
-      top: 0
-      position: relative
-      border-bottom: none
-      padding-bottom: 0
-      height: 70px
-      line-height: 70px
+      display: none
 
-    +min-screen($desktop-break)
-      height: 77px
+    +m(open)
+      top: 60px !important
+      left: 0
 
-    ul
+    +m(links)
       list-style: none
-      padding: 0
-
-      +min-screen($tablet-break)
-        margin: 5px 0 0 0
 
       li
-        width: 100%
-        text-align: left
-        margin: 0 0 0 20px
-        height: 25px
-
-        +min-screen($tablet-break)
-          display: inline-block
-          width: auto
+        display: block
 
         a
           text-decoration: none
@@ -133,9 +191,11 @@
           -webkit-backface-visibility: hidden; // prevents an annoying flicker on hover
           position: relative
           padding-bottom: 1px
+          text-transform: uppercase
+          margin-right: 15px
 
           &:before
-            background-color: #333
+            background-color: $super-light-dark
             content: ""
             height: 1px
             position: absolute
@@ -143,68 +203,25 @@
             left: 0
             width: 100%
             transform: scaleX(0)
-            transition: all 0.3s ease-in-out 0s
+            transition: all 0.1s ease-in-out 0s
 
           &:hover:before
             transform: scaleX(1)
 
           &:hover
-            color: #000
-
-          +min-screen($tablet-break)
-            font-size: 13px
-            margin: 0
-            padding-bottom: 3px
-
-          +min-screen(800px)
-            font-size: 15px
-
-          +min-screen($desktop-break)
-            font-size: 18px
-            margin: 0 0 0 10px
-            padding-bottom: 5px
-
-  +e(mobile)
-    display: block
-
-    +min-screen($tablet-break)
-      display: none
+            color: $dark
 
     +m(line)
-      width: 50px
+      width: 125px
       height: 1px
-      background: #999
-      margin: 0 0 0 20px
+      background: $super-light-dark
+      margin: 0 0 0 40px
 
-    +m(form-title)
-      font-size: 12px
-      font-weight: 200
-      margin: 15px 0 10px 20px
-      padding: 0
-      color: #666
+  +e(icons)
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    margin: 20px 0 20px 40px
 
-    +m(email-form)
-      width: 90%
-      margin: 0 5%
-      padding: 0
-      display: flex
-      flex-direction: row
-
-    +m(enter-email)
-      width: 75%
-      background: url(img/mail-icon.png) no-repeat 7px 5px
-      padding-left: 37px
-      box-shadow: none
-      border: 1px solid #333
+    a
       margin-right: 10px
-
-    +m(signup-button)
-      width: 25%
-      background: white
-      border: 1px solid #333
-      box-shadow: none
-      font-size: 12px
-
-      &:hover
-        background: #666
-        color: white

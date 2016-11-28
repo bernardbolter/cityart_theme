@@ -1,11 +1,11 @@
 </div> <!-- CLOSING OF site-wrapper CLASS AT THE BOTTOM ON NAVIGATION FILE -->
     <footer class="footer">
       <div class="footer__icons">
-        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo_test.png" /></a>
-        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo_test.png" /></a>
-        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo_test.png" /></a>
+        <a href="https://www.facebook.com/cityartgallery.sf/"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter_icon.png" /></a>
+        <a href="https://twitter.com/sfcityart"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook_icon.png" /></a>
+        <a href="https://www.instagram.com/explore/locations/1637514/"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram_icon.png" /></a>
       </div>
-      <p class="footer__info">828 Valencia Street &#8226; San Francisco &#8226; 415-970-9900</p>
+      <p class="footer__info">828 Valencia Street &#8226; San Francisco <span class="footer__hide">&#8226;</span> <span class="footer__break">415-970-9900</span></p>
     </footer>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/mashup.js"></script>
     <?php if ( is_singular( 'artist' ) ) { ?>
