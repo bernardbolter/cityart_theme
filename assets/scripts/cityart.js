@@ -1,3 +1,5 @@
+// Code for the mobile navigation
+
 $('#navigation-button').click(function() {
    $(this).toggleClass('navigation__button--active');
    $('#links').toggleClass('navigation__mobile--open');
@@ -5,6 +7,21 @@ $('#navigation-button').click(function() {
    $('#navigation').toggleClass('navigation__open');
    $('#logo').toggleClass('navigation__logo--open');
    $('#site-wrap').toggleClass('site-wrapper-open');
+});
+
+// Code for when the upcoming notification is at the top of the Page
+
+if(document.getElementById('upcoming-close')) {
+  $('#site-wrap').addClass('site-wrap-upcoming');
+  $('#navigation').addClass('navigation-upcoming');
+};
+
+// Code to close upcoming notification bar when present
+
+$('#upcoming-close').click(function(){
+  $('#upcoming').remove();
+  $('#site-wrap').removeClass('site-wrap-upcoming');
+  $('#navigation').removeClass('navigation-upcoming');
 });
 
 

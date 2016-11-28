@@ -32,9 +32,9 @@
     </ul>
     <div class="navigation__mobile--line"></div>
     <div class="navigation__icons">
-      <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo_test.png" /></a>
-      <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo_test.png" /></a>
-      <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo_test.png" /></a>
+      <a href="https://www.facebook.com/cityartgallery.sf/"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter_icon.png" /></a>
+      <a href="https://twitter.com/sfcityart"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook_icon.png" /></a>
+      <a href="https://www.instagram.com/explore/locations/1637514/"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram_icon.png" /></a>
     </div>
   </div>
 </nav>

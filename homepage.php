@@ -5,14 +5,20 @@
 ?>
 
 <?php include 'header.php' ?>
-
-<?php include 'navigation.php' ?>
 <?php
 // get latest post ID and see if the upcoming box is checked
 $latest_exhibition = get_posts("post_type=exhibition&numberposts=1");
 $latest_id = $latest_exhibition[0]->ID;
 $upcoming = get_field('upcoming', $latest_id);
 
+if( $upcoming == true ):
+  include 'upcoming-notification.php';
+endif;
+?>
+
+<?php include 'navigation.php' ?>
+
+<?php
 if( $upcoming == true ):
   $homepage_loop = new WP_Query(array( 'post_type' => 'exhibition', 'posts_per_page' => 1, 'offset' => 1 ) );
 else:

@@ -22,7 +22,25 @@
         '<?php the_field('artist_image_2_info'); ?>',
         '<?php echo $image_3_url ?>',
         '<?php the_field('artist_image_3_title'); ?>',
-        '<?php the_field('artist_image_3_info'); ?>'
+        '<?php the_field('artist_image_3_info'); ?>',
+        '<?php echo $image_4_url ?>',
+        '<?php the_field('artist_image_4_title'); ?>',
+        '<?php the_field('artist_image_4_info'); ?>',
+        '<?php echo $image_5_url ?>',
+        '<?php the_field('artist_image_5_title'); ?>',
+        '<?php the_field('artist_image_5_info'); ?>',
+        '<?php echo $image_6_url ?>',
+        '<?php the_field('artist_image_6_title'); ?>',
+        '<?php the_field('artist_image_6_info'); ?>',
+        '<?php echo $image_7_url ?>',
+        '<?php the_field('artist_image_7_title'); ?>',
+        '<?php the_field('artist_image_7_info'); ?>',
+        '<?php echo $image_8_url ?>',
+        '<?php the_field('artist_image_8_title'); ?>',
+        '<?php the_field('artist_image_8_info'); ?>',
+        '<?php echo $image_9_url ?>',
+        '<?php the_field('artist_image_9_title'); ?>',
+        '<?php the_field('artist_image_9_info'); ?>'
       ]);
 
     })(jQuery);
