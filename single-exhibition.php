@@ -27,7 +27,7 @@
           <div class="exhibition__artists">
             <h1 class="exhibition__artists--title">Featured Artists</h1>
             <?php
-            $post_objects = get_field('exhibition_artist_name_dropdown_1');
+            $post_objects = get_field('artist_names_list');
 
             // makes a list of all the artists that have profile pages with extra artist at the bottom
             if( $post_objects ): ?>
@@ -39,7 +39,6 @@
             <?php endif; ?>
 
             <?php if( get_field('extra_artist_name_1') ): ?>
-
               <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_1'); ?></p>
             <?php endif; ?>
 

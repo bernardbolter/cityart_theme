@@ -24,6 +24,12 @@ $('#upcoming-close').click(function(){
   $('#navigation').removeClass('navigation-upcoming');
 });
 
+// Code to open and close past shows link in Exhibitions
+
+$('#past-shows').click(function() {
+  $('.exhibition__nav--pastshows').toggleClass('exhibition__nav--pastshows-open');
+});
+
 
 $('#artwork_1').click(function() {
   $("#artwork_hero_image").fadeOut(function() {
