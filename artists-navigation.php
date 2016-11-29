@@ -1,13 +1,8 @@
 <div class="artists-index__navigation">
   <div class="artists-index__artists">
     <a href="#" id="artists-sorting-header" class="artists-index__artists--header">Artists<img src="<?php echo get_template_directory_uri(); ?>/img/chevron-outline.png" /></a>
-      <!-- <div class="artists-index__artists--link-wrap">
-        <a href="<?php echo home_url(); ?>/artists-index" class="artists-index__links <?php if(is_page(58) || is_page(113)) echo 'artists-index__links--active'; ?>">Thumbnail <span class="artists-index__square"></span></a>
-        <a href="<?php echo home_url(); ?>/artists-list" class="artists-index__links">List <span class="artists-index__square"></span></a>
-    </div> -->
   </div>
-  <div href="#" class="artists-index__artwork">
-    <!-- <a href="#" id="artwork-sorting-header" class="artists-index__artwork--header">Artwork<img src="<?php echo get_template_directory_uri(); ?>/img/chevron-outline.png" /></a> -->
+  <div class="artists-index__artwork">
     <div class="artists-index__artwork--link-wrap">
       <h3>Filter By</h3>
       <form action="/artists-filter" method="GET">

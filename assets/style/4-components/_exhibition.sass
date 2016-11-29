@@ -62,6 +62,7 @@
     +min-screen($tablet-break)
       display: flex
       flex-direction: column
+      width: 100%
 
   +e(title)
     font-size: 14px
@@ -77,6 +78,8 @@
       display: flex
       flex-direction: row
 
+    +m(flex)
+      flex-wrap: wrap
 
   +e(front)
     width: 100%
@@ -92,11 +95,10 @@
 
   +e(back)
     width: 100%
-    padding: 0 3%
+    padding: 20px 3%
 
     +min-screen($tablet-break)
       width: 70%
-      padding: 0 3%
 
     img
       width: 100%

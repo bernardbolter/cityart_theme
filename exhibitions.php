@@ -29,9 +29,6 @@ $upcoming_or_not = get_field('upcoming', $latest_id);
         echo get_the_permalink( $past_shows[0]->ID);
         endif;
         ?>">Current Show</a>
-      <?php if(!empty($upcoming_or_not)): ?>
-        <a href="#">Upcoming Show</a>
-      <?php endif; ?>
       <a href="#" id="past-shows">Past Shows</a>
       <div class="exhibition__nav--pastshows">
         <ul>
@@ -90,7 +87,6 @@ $upcoming_or_not = get_field('upcoming', $latest_id);
           <?php endif; ?>
 
           <?php if( get_field('extra_artist_name_1') ): ?>
-
             <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_1'); ?></p>
           <?php endif; ?>
 
@@ -110,12 +106,13 @@ $upcoming_or_not = get_field('upcoming', $latest_id);
             <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_5'); ?></p>
           <?php endif; ?>
 
+        <?php endif; ?>
+
         </div> <!-- exhibition__artists -->
       </div> <!-- exhibition__back -->
     </div> <!-- exhibition_postcard__wrap -->
   </div> <!-- exhibition__title-wrap -->
 
-      <?php endif; ?>
 
     </div> <!-- exhibition__wrap -->
     <?php endwhile; wp_reset_query(); ?>
