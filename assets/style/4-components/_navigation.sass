@@ -1,10 +1,7 @@
 .navigation
-  display: flex
-  flex-direction: row
-  justify-content: center
   top: 0
   position: fixed
-  background: rgba(255, 255, 255, 0.5)
+  background: white
   width: 100%
   height: 65px
   z-index: 2
@@ -24,27 +21,45 @@
     margin: 0
     width: 150px
     height: 37px
-    text-align: left
     background: white
-    position: absolute
-    left: 4%
-    top: 15px
+    position: relative
     z-index: 5
+    margin: 15px 0 0 10px
 
     +min-screen($tablet-break)
-      left: 7%
+
 
     +min-screen($desktop-break)
-      left: 13%
+
 
     img
       width: 150px
       height: 37px
 
+  +e(container)
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    width: 94%
+    margin: 0 3%
+    transition: all 1s ease-in-out
+
+    +min-screen($tablet-break)
+      width: 86%
+      margin: 0 7%
+
+    +min-screen(767px)
+      justify-content: flex-start
+
+    +min-screen($desktop-break)
+      width: 74%
+      margin: 0 13%
+      max-width: 1200px
+      margin: 0 auto
+
   +e(button)   // BUTTON CLASSES
-    position: absolute
-    top: 25px
-    right: 5%
+    position: relative
+    margin: 23px 20px 0 0
     width: 25px
     height: 25px
     cursor: pointer
@@ -52,7 +67,7 @@
     transition: opacity .25s ease
     transition: margin 1s ease-in-out
 
-    +min-screen($tablet-break)
+    +min-screen(767px)
       display: none
 
     +m(active)
@@ -86,36 +101,17 @@
       &:nth-of-type(3)
         top: 20px
 
-  +e(container)  // NAVIGATION DESKTOP MENU CLASSES
+  +e(links)
     display: none
 
-    +min-screen($tablet-break)
-      width: 100%
-      z-index: 4
-      position: relative
-      list-style: none
-      transition: all 1s ease-in-out
+    +m(active)
+      border-bottom: 1px solid $light-dark
+
+    +min-screen(768px)
       display: block
-      height: 70px
-      line-height: 70px
-
-      +min-screen($desktop-break)
-        width: 74%
-        margin: 0 13%
-
-    ul
       list-style: none
       padding: 0
-      margin: 9px 0 0 31%
-
-      +min-screen(800px)
-        margin: 9px 0 0 245px
-
-      +min-screen(900px)
-        margin: 9px 0 0 255px
-
-      +min-screen($desktop-break)
-        margin: 9px 0 0 185px
+      margin: 25px 0 0 30px
 
       li
         display: inline-block
@@ -132,6 +128,9 @@
           text-transform: uppercase
           margin-right: 15px
 
+          &:hover
+            border-bottom: 1px solid $light-dark
+
           +min-screen(900px)
             margin-right: 22px
 
@@ -139,28 +138,12 @@
             margin-right: 28px
             font-size: 13px
 
-          &:before
-            background-color: $super-light-dark
-            content: ""
-            height: 1px
-            position: absolute
-            bottom: 0
-            left: 0
-            width: 100%
-            transform: scaleX(0)
-            transition: all 0.1s ease-in-out 0s
-
-          &:hover:before
-            transform: scaleX(1)
-
-          &:hover
-            color: $dark
-
   +e(mobile)
     display: block
     width: 100%
     z-index: 1
     top: -185px
+    left: 0
     position: absolute
     list-style: none
     align-self: center
@@ -169,7 +152,20 @@
     border-bottom: 1px solid $super-light-dark
     background: white
 
-    +min-screen($tablet-break)
+    +m(background)
+      width: 100%
+      position: absolute
+      top: 0
+      left: 0
+      height: 65px
+      z-index: 2
+      background: white
+      display: block
+
+      +min-screen(767px)
+        display: none
+
+    +min-screen(767px)
       display: none
 
     +m(open)
@@ -188,28 +184,16 @@
           color: #333
           letter-spacing: 0.05em
           cursor: pointer
-          -webkit-backface-visibility: hidden; // prevents an annoying flicker on hover
           position: relative
           padding-bottom: 1px
           text-transform: uppercase
           margin-right: 15px
 
-          &:before
-            background-color: $super-light-dark
-            content: ""
-            height: 1px
-            position: absolute
-            bottom: 0
-            left: 0
-            width: 100%
-            transform: scaleX(0)
-            transition: all 0.1s ease-in-out 0s
-
-          &:hover:before
-            transform: scaleX(1)
-
           &:hover
-            color: $dark
+            border-bottom: 1px solid $light-dark
+
+    +m(links-active)
+      border-bottom: 1px solid $light-dark
 
     +m(line)
       width: 125px
