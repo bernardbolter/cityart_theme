@@ -11,11 +11,13 @@
 <div class="howtojoin">
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
   <div class="howtojoin__nav">
-    <a href="<?php echo home_url(); ?>/howtojoin">Benefits</a>
-    <a href="<?php echo home_url(); ?>/howtojoin/membership">Membership</a>
+    <a class="howtojoin__nav--active" href="<?php echo home_url(); ?>/howtojoin">Benefits</a>
+    <a  href="<?php echo home_url(); ?>/howtojoin/membership">Membership</a>
     <a href="<?php echo home_url(); ?>/howtojoin/application">Application</a>
   </div> <!-- howtojoin__nav -->
+
   <div class="howtojoin__content">
     <div class="howtojoin__content--hero">
       <?php the_post_thumbnail(); ?>

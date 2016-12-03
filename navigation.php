@@ -15,7 +15,7 @@
     <ul class="navigation__links">
       <li><a class="<?php if(is_page( 35 ) || is_singular( 'exhibition')) echo 'navigation__links--active'; ?>" href="<?php echo home_url(); ?>/exhibitions">Exhibitions</a></li>
       <li><a class="<?php if(is_page( 58 ) || is_page(113) || is_singular( 'artist' )) echo 'navigation__links--active'; ?>" href="<?php echo home_url(); ?>/artists">Artists</a></li>
-      <li><a class="<?php if(is_page( 30 )) echo 'navigation__links--active'; ?>" href="<?php echo home_url(); ?>/howtojoin">How to Join</a></li>
+      <li><a class="<?php if(is_page( 30 ) || is_page(238) || is_page(249)) echo 'navigation__links--active'; ?>" href="<?php echo home_url(); ?>/howtojoin">How to Join</a></li>
       <li><a class="<?php if(is_page( 235 )) echo 'navigation__links--active'; ?>" href="<?php echo home_url(); ?>/aboutus">About Us</a></li>
       <li><a href="<?php echo home_url(); ?>/wp-admin">Member Login</a></li>
     </ul>
@@ -26,7 +26,7 @@
       <ul class="navigation__mobile--links" id="links">
         <li><a class="<?php if(is_page( 35 ) || is_singular( 'exhibition')) echo 'navigation__mobile--links-active'; ?>" href="<?php echo home_url(); ?>/exhibitions">Exhibitions</a></li>
         <li><a class="<?php if(is_page( 58 ) || is_page(113) || is_singular( 'artist' )) echo 'navigation__mobile--links-active'; ?>" href="<?php echo home_url(); ?>/artists">Artists</a></li>
-        <li><a href="<?php echo home_url(); ?>/howtojoin">How to Join</a></li>
+        <li><a class="<?php if(is_page( 30 ) || is_page(238) || is_page(249)) echo 'navigation__mobile--links-active'; ?>"href="<?php echo home_url(); ?>/howtojoin">How to Join</a></li>
         <li><a href="<?php echo home_url(); ?>/aboutus">About Us</a></li>
         <li><a href="<?php echo home_url(); ?>/wp-admin">Member Login</a></li>
       </ul>
