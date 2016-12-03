@@ -47,7 +47,7 @@
       }
 
       $args = array(
-        'post_type'     => 'artist',
+        'post_type'  => 'artist',
         'posts_per_page' => -1,
         'cat' => $medium_args,
         'orderby' => $orderby,
@@ -62,7 +62,6 @@
 <?php include 'navigation.php' ?>
 
 <div class="artists-index">
-
   <?php include 'artists-navigation.php' ?>
 
    <div id="artwork-loop" class="artists-index__wrapper">
