@@ -80,3 +80,5 @@ $('#artwork_5').click(function() {
 });
 
 $('ul.artists-index__categories li a').append( "<span class='artists-index__square'></span>");
+
+// INSTAGRAM FEED

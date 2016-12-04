@@ -24,7 +24,8 @@ var path = {
 			],
 	  JS: [
 	  	'./assets/scripts/vendor/*.js',
-	  	'./assets/scripts/*.js'
+			'./assets/scripts/insta.js',
+	  	'./assets/scripts/cityart.js'
 	  	],
 	  SVG: './assets/vectors/*.svg',
 	  IMG: [

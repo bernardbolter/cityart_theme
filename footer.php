@@ -8,6 +8,8 @@
       <p class="footer__info">828 Valencia Street &#8226; San Francisco <span class="footer__hide">&#8226;</span> <span class="footer__break">415-970-9900</span></p>
     </footer>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/mashup.js"></script>
+    <?php wp_footer(); ?>
+
     <?php if ( is_singular( 'artist' ) ) { ?>
     <script type="text/javascript">
     (function($) {

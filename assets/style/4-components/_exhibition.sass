@@ -4,22 +4,30 @@
 
   +e(nav)
     width: 94%
-    margin: 0 3%
+    margin: 0 3% 30px
     text-align: left
 
+    +m(active)
+      font-weight: 600
+
     +min-screen($tablet-break)
-      width: 200px
+      width: 170px
       text-align: right
-      margin: 20px 0 0 0
+      margin: 0
+      flex-grow: 0
+      flex-shrink: 0
+      flex-basis: 170px
 
     a
-      font-size: 13px
-      text-transform: uppercase
+      font-size: 15px
       weight: 300
-      color: $light-dark
+      color: $dark
       margin-right: 23px
       text-decoration: none
       display: block
+
+      &:hover
+        font-weight: 600
 
       +min-screen($tablet-break)
         text-align: right
@@ -54,7 +62,7 @@
     +min-screen($tablet-break)
       display: flex
       flex-direction: row
-      justify-content: space-around
+      justify-content: flex-start
       width: 100%
       margin: 30px 0
 
@@ -73,20 +81,22 @@
     padding-bottom: 5px
     border-bottom: 1px solid $super-light-dark
 
-  +e(postcard-wrap)
+  +e(postcard-wrap-text)
     +min-screen($tablet-break)
       display: flex
       flex-direction: row
 
-    +m(flex)
-      flex-wrap: wrap
+  +e(postcard-wrap-back)
+    +min-screen($tablet-break)
+      display: flex
+      flex-direction: column
 
   +e(front)
     width: 100%
     padding: 0 3%
 
     +min-screen($tablet-break)
-      width: 70%
+      width: 100%
       padding: 0 3%
 
     img
@@ -135,8 +145,11 @@
     padding: 0 3%
 
     +min-screen($tablet-break)
-      width: 30%
-      padding: 0 3%
+      width: 170px
+      padding: 0 0 0 3%
+      flex-basis: 170px
+      flex-grow: 0
+      flex-shrink: 0
 
     +m(title)
       font-size: 13px
@@ -157,3 +170,31 @@
       color: $light-dark
       margin: 0
       padding: 0
+
+  +e(instagram-wrap)
+    display: flex
+    flex-direction: column
+
+  +e(instagram)
+    margin: 30px 3% 0
+    border-top: 1px solid $super-light-dark
+
+    h1
+      font-size: 24px
+      font-weight: 300
+      color: $dark
+
+    h2
+      font-size: 16px
+      font-weight: 300
+      color: $light-dark
+      margin-right: 0
+
+      +min-screen(800px)
+        margin-right: 30%
+
+      +min-screen(1200px)
+        margin-right: 50%
+
+.wdi_feed_item
+  padding: 20px 20px 0 0 !important

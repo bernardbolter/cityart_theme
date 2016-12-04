@@ -16,7 +16,21 @@ $latest_id = $latest_exhibition[0]->ID;
 $upcoming_or_not = get_field('upcoming', $latest_id);
 ?>
 
-<?php $exhibition_loop = new WP_Query(array( 'post_type' => 'exhibition', 'posts_per_page' => 1 ) ); ?>
+<?php if(!empty($upcoming_or_not)):
+        $exhibit_args = array(
+          'post_type'  => 'exhibition',
+          'posts_per_page' => 1,
+          'offset' => 1
+        );
+      else:
+        $exhibit_args = array(
+          'post_type'  => 'exhibition',
+          'posts_per_page' => 1
+        );
+      endif;
+?>
+
+<?php $exhibition_loop = new WP_Query( $exhibit_args ); ?>
 <?php while ( $exhibition_loop->have_posts() ) : $exhibition_loop->the_post(); ?>
 
   <div class="exhibition__wrap">
@@ -28,8 +42,13 @@ $upcoming_or_not = get_field('upcoming', $latest_id);
         else:
         echo get_the_permalink( $past_shows[0]->ID);
         endif;
-        ?>">Current Show</a>
-      <a href="#" id="past-shows">Past Shows</a>
+        ?>" class="exhibition__nav--active">Current Show</a>
+
+      <?php if(!empty($upcoming_or_not)): ?>
+        <a href="<?php echo get_the_permalink( $past_shows[0]->ID); ?>">Upcoming Show</a>
+      <?php endif; ?>
+
+      <a href="#" id="past-shows">All Shows</a>
       <div class="exhibition__nav--pastshows">
         <ul>
         <?php
@@ -41,20 +60,15 @@ $upcoming_or_not = get_field('upcoming', $latest_id);
          <?php endforeach; ?>
          </ul>
       </div>
-    </div>
+    </div> <!-- exhibition-nav -->
 
-    <div class="exhibition__title-wrap">
+    <div class="exhibition__instagram-wrap">
 
-    <div class="exhibition__title"><?php the_title(); ?> &#8226;
-      <?php if(empty($upcoming_or_not)):
-              echo 'Current Show';
-            else:
-              echo 'Upcoming Show';
-            endif;
-      ?>
-    </div>
-
-    <div class="exhibition__postcard-wrap">
+      <?php if( get_field('exhibition_postcard_back') ): ?>
+        <div class="exhibition__postcard-wrap-back">
+        <?php else: ?>
+        <div class="exhibition__postcard-wrap-text">
+        <?php endif; ?>
 
     <div class="exhibition__front">
       <?php $exhibition_postcard = get_field('exhibition_postcard_front'); ?>
@@ -66,6 +80,7 @@ $upcoming_or_not = get_field('upcoming', $latest_id);
       <div class="exhibition__back">
         <?php $exhibition_postcard_back = get_field('exhibition_postcard_back'); ?>
         <img src="<?php echo $exhibition_postcard_back['sizes']['large']?>" />
+      </div> <!-- exhibition__back -->
 
       <?php else: ?>
         <div class="exhibition__artists">
@@ -106,16 +121,83 @@ $upcoming_or_not = get_field('upcoming', $latest_id);
             <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_5'); ?></p>
           <?php endif; ?>
 
-        <?php endif; ?>
+          <?php if( get_field('extra_artist_name_6') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_6'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_7') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_7'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_8') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_8'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_9') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_9'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_10') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_10'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_11') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_11'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_12') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_12'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_13') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_13'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_14') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_14'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_15') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_15'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_16') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_16'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_17') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_17'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_18') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_18'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_19') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_19'); ?></p>
+          <?php endif; ?>
+
+          <?php if( get_field('extra_artist_name_20') ): ?>
+            <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_20'); ?></p>
+          <?php endif; ?>
+
+        <?php endif; ?> <!-- exhibition-postcard -->
 
         </div> <!-- exhibition__artists -->
-      </div> <!-- exhibition__back -->
-    </div> <!-- exhibition_postcard__wrap -->
-  </div> <!-- exhibition__title-wrap -->
 
+      </div> <!-- exhibition_postcard__wrap -->
 
-    </div> <!-- exhibition__wrap -->
-    <?php endwhile; wp_reset_query(); ?>
-  </div> <!-- exhibition -->
+      <div class="exhibition__instagram">
+        <h1>Pictures From The Gallery</h1>
+        <h2>Share your experiences at City Art Gallery on Instagram! Hashtag #cityartgallery to have your picture shown here.</h2>
+        <?php echo wdi_feed(array('id'=>'1')); ?>
+      </div> <!-- exhibtions-instagram -->
+
+    </div> <!-- exhibition_instagram-wrap -->
+
+  </div> <!-- exhibition__wrap -->
+
+  <?php endwhile; wp_reset_query(); ?>
+</div> <!-- exhibition -->
 
 <?php include 'footer.php' ?>
