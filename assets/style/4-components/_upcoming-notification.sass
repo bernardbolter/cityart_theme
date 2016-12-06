@@ -9,6 +9,12 @@
   flex-direction: row
   justify-content: space-between
 
+  +e(hide)
+    display: none
+
+    +min-screen(500px)
+      display: inline-block
+
   +min-screen(500px)
     justify-content: center
 
@@ -17,9 +23,11 @@
     color: white
     text-transform: uppercase
     line-height: 25px
+    margin-left: 4%
 
     +min-screen(500px)
       font-size: 13px
+      margin-left: 0
 
     a
       color: $accent-color
@@ -34,6 +42,7 @@
     text-decoration: none
     line-height: 25px
     font-size: 18px
+    margin-right: 4%
 
     +min-screen(500px)
       margin: 11px 0 0 50px
