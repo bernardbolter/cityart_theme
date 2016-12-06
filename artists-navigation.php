@@ -12,12 +12,12 @@
             'order_by' => 'name',
             'taxonomy' => 'category'
           );
+          if(empty($medium_args)): $medium_args = []; endif;
           $categories = get_categories( $argues );
 
-          foreach ( $categories as $category ){
-            $cat_name = $category->name; ?>
+          foreach ( $categories as $category ){ ?>
 
-            <li><label><input <?php if(in_array( $category->cat_ID , $medium_args )): echo 'checked'; endif; ?> type="checkbox" name="medium[]" value="<?php echo $category->cat_ID; ?> " /><?php echo $cat_name; ?></label></li>
+            <li><label><input <?php if(in_array( $category->cat_ID , $medium_args )): echo 'checked'; endif; ?> type="checkbox" name="medium[]" value="<?php echo $category->cat_ID; ?> " /><?php echo $category->cat_name; ?></label></li>
           <?php
           }
           ?>

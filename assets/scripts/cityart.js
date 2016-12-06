@@ -79,6 +79,38 @@ $('#artwork_5').click(function() {
   });
 });
 
+$('#artwork_6').click(function() {
+  $("#artwork_hero_image").fadeOut(function() {
+    $("#artwork_hero_image").attr( 'src', artist_image_data[0][15] ).fadeIn();
+    $("#artwork_hero_title").text( artist_image_data[0][16] ).fadeIn();
+    $("#artwork_hero_info").text( artist_image_data[0][17] ).fadeIn();
+  });
+});
+
+$('#artwork_7').click(function() {
+  $("#artwork_hero_image").fadeOut(function() {
+    $("#artwork_hero_image").attr( 'src', artist_image_data[0][18] ).fadeIn();
+    $("#artwork_hero_title").text( artist_image_data[0][19] ).fadeIn();
+    $("#artwork_hero_info").text( artist_image_data[0][20] ).fadeIn();
+  });
+});
+
+$('#artwork_8').click(function() {
+  $("#artwork_hero_image").fadeOut(function() {
+    $("#artwork_hero_image").attr( 'src', artist_image_data[0][21] ).fadeIn();
+    $("#artwork_hero_title").text( artist_image_data[0][22] ).fadeIn();
+    $("#artwork_hero_info").text( artist_image_data[0][23] ).fadeIn();
+  });
+});
+
+$('#artwork_9').click(function() {
+  $("#artwork_hero_image").fadeOut(function() {
+    $("#artwork_hero_image").attr( 'src', artist_image_data[0][24] ).fadeIn();
+    $("#artwork_hero_title").text( artist_image_data[0][25] ).fadeIn();
+    $("#artwork_hero_info").text( artist_image_data[0][26] ).fadeIn();
+  });
+});
+
 $('ul.artists-index__categories li a').append( "<span class='artists-index__square'></span>");
 
 // INSTAGRAM FEED
