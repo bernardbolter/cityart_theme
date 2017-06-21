@@ -2,6 +2,16 @@
 
 add_theme_support( 'post-thumbnails' );
 
+// add javascript
+
+function cityart_adding_scripts() {
+
+wp_dequeue_script( 'jquery' );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'cityart_adding_scripts' );
+
 // Sorts artists by last name
 
 function posts_orderby_lastname ($orderby_statement)
@@ -47,4 +57,15 @@ function my_acf_modify_exhibition_names_input_height() {
 }
 
 add_filter('show_admin_bar', '__return_false');
-?>
+
+// // add jQuery
+//
+// function include_jQuery() {
+//     if (!is_admin()) {
+//         // comment out the next two lines to load the local copy of jQuery
+//         wp_deregister_script('jquery');
+//         wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', false, '1.8.3');
+//         wp_enqueue_script('jquery');
+//     }
+// }
+// add_action('init', 'include_jQuery')

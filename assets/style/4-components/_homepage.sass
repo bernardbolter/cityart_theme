@@ -85,9 +85,13 @@
       margin: 20px 0 0  0
 
     +m(december)
-      font-size: 10px
+      font-size: 14px
       font-weight: 300
       margin: 0
+
+  +e(formwrap)
+    display: flex
+    justify-content: center
 
   +e(email)
     width: 100%
@@ -97,17 +101,17 @@
     margin-top: 5%
 
     +min-screen($tablet-break)
-      width: 50%
+      width: 65%
       float: right
       margin: -140px 0 0 0
       +clearfix()
 
     +min-screen($desktop-break)
-      width: 40%
+      width: 65%
       margin: -160px 0 0 0
 
-    +min-screen(1300px)
-      width: 350px
+    +min-screen(1400px)
+      width: 450px
       margin: -350px 0 0 0
 
     +m(signup)
@@ -123,6 +127,9 @@
       width: 90%
       margin: 0 auto
 
+      form
+        width: 100%
+
     +m(input)
       border-top: none
       border-left: none
@@ -133,6 +140,7 @@
       box-shadow: none
       width: 70%
       padding: 0 0 0 35px
+      font-size: 13px
 
     +m(button)
       background: white

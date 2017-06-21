@@ -89,17 +89,6 @@ $upcoming_or_not = get_field('upcoming', $latest_id);
             <p class="exhibition__upcoming-time">7-10 PM</p>
 
           <h1 class="exhibition__artists--title">Featured Artists</h1>
-          <?php
-          $post_objects = get_field('artist_names_list');
-
-          // makes a list of all the artists that have profile pages with extra artist at the bottom
-          if( $post_objects ): ?>
-              <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-              <?php setup_postdata($post); ?>
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-              <?php endforeach; ?>
-              <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-          <?php endif; ?>
 
           <?php if( get_field('extra_artist_name_1') ): ?>
             <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_1'); ?></p>
@@ -181,6 +170,18 @@ $upcoming_or_not = get_field('upcoming', $latest_id);
             <p class="exhibition__artists--extra"><?php the_field('extra_artist_name_20'); ?></p>
           <?php endif; ?>
 
+          <?php
+          $post_objects = get_field('artist_names_list');
+
+          // makes a list of all the artists that have profile pages with extra artist at the bottom
+          if( $post_objects ): ?>
+              <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+              <?php setup_postdata($post); ?>
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+              <?php endforeach; ?>
+              <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+          <?php endif; ?>
+
         <?php endif; ?> <!-- exhibition-postcard -->
 
         </div> <!-- exhibition__artists -->
@@ -189,7 +190,7 @@ $upcoming_or_not = get_field('upcoming', $latest_id);
 
       <div class="exhibition__instagram">
         <h1>Pictures From The Gallery</h1>
-        <h2>Share your experiences at City Art Gallery on Instagram! Hashtag #cityartgallery to have your picture shown here.</h2>
+        <h2>Share your experiences at City Art Gallery on Instagram! Hashtag #cityartgallerysf to have your picture shown here.</h2>
         <?php echo wdi_feed(array('id'=>'1')); ?>
       </div> <!-- exhibtions-instagram -->
 

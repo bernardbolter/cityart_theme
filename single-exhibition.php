@@ -177,7 +177,7 @@ $upcoming_or_not = get_field('upcoming', $latest_id);
 
       <div class="exhibition__instagram">
         <h1>Pictures From The Gallery</h1>
-        <h2>Share your experiences at City Art Gallery on Instagram! Hashtag #cityartgallery to have your picture shown here.</h2>
+        <h2>Share your experiences at City Art Gallery on Instagram! Hashtag #cityartgallerysf to have your picture shown here.</h2>
         <?php echo wdi_feed(array('id'=>'1')); ?>
       </div> <!-- exhibtions-instagram -->
 

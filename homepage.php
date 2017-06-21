@@ -37,20 +37,26 @@ endif;
     <h1 class="homepage__info--title">NEW GROUP SHOW <span class="homepage__info--date"><?php the_field('exhibition_dates'); ?> </span></h1>
     <h2 class="homepage__info--reception">Opening Reception <span class="homepage__info--time">FRI &#8226; <?php the_field('exhibition_opening_date'); ?> &#8226; 7-10pm</span></h2>
     <h3 class="homepage__info--first">First friday of every month!</h3>
-    <p class="homepage__info--hours">Sunday <span class="homepage__info--hours-light">11am-9pm</span></p>
     <p class="homepage__info--hours">Wednesday <span class="homepage__info--hours-light">noon-9pm</span></p>
     <p class="homepage__info--hours">Thursday <span class="homepage__info--hours-light">noon-9pm</span></p>
-    <p class="homepage__info--hours">Friday <span class="homepage__info--hours-light">noon-9pm</span></p>
+    <p class="homepage__info--hours">Friday <span class="homepage__info--hours-light">noon-10pm</span></p>
     <p class="homepage__info--hours">Saturday <span class="homepage__info--hours-light">11am-10pm</span></p>
+    <p class="homepage__info--hours">Sunday <span class="homepage__info--hours-light">11am-9pm</span></p>
     <p class="homepage__info--closed">Closed Monday &amp; Tuesday</p>
-    <p class=homepage__info--december>* except in December</p>
+    <p class=homepage__info--december>open everyday in December</p>
   </div>
 
   <div class="homepage__email">
     <h4 class="homepage__email--signup">Sign up for our e-mail list</h4>
     <div class="homepage__email--wrap">
-      <input type="text" class="homepage__email--input" name="EMAIL_TWO" id="home-email-imput" placeholder="" spellcheck="false">
-      <button type="submit" id="home-button-input" class="homepage__email--button">JOIN</button>
+      <form action="https://cityartgallery.us6.list-manage.com/subscribe/post" method="POST">
+        <div class="homepage__formwrap">
+          <input type="hidden" name="u" value="bcf06719f19e4014c857d61aa" />
+          <input type="hidden" name="id" value="61a76d6f8c" />
+          <input type="email" name="MERGE0" id="MERGE0" class="homepage__email--input" placeholder="" spellcheck="false">
+          <button type="submit" id="home-button-input" class="homepage__email--button">JOIN</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

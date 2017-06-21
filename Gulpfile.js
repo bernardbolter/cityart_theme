@@ -22,11 +22,7 @@ var path = {
 		'./assets/style/**/*.scss',
 		'./assets/style/**/*.sass'
 			],
-	  JS: [
-	  	'./assets/scripts/vendor/*.js',
-			'./assets/scripts/insta.js',
-	  	'./assets/scripts/cityart.js'
-	  	],
+	  JS: './assets/scripts/*.js',
 	  SVG: './assets/vectors/*.svg',
 	  IMG: [
 	  	'./assets/images/**/*.jpg',
@@ -63,13 +59,20 @@ gulp.task('style-pro', function() {
 
 // JAVASCRIPT - JS COMMANDS --------------------------------------------------------------------
 
+// gulp.task('scripts-dev', function() {
+// 	gulp.src(path.JS)
+// 		.pipe(sourcemaps.init())
+// 		.pipe(concat('mashup.js'))
+// 		.pipe(sourcemaps.write())
+//     .pipe(livereload(server))
+// 		.pipe(gulp.dest('./js'));
+// });
+
 gulp.task('scripts-dev', function() {
 	gulp.src(path.JS)
-		.pipe(sourcemaps.init())
-		.pipe(concat('mashup.js'))
-		.pipe(sourcemaps.write())
-    .pipe(livereload(server))
-		.pipe(gulp.dest('./js'));
+	.pipe(concat('mashup.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest('./js'));
 });
 
 gulp.task('scripts-pro', function() {

@@ -12,11 +12,6 @@
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-  <div class="about__nav">
-    <a class="about__nav--active" href="<?php echo home_url(); ?>/aboutus">About</a>
-    <a  href="<?php echo home_url(); ?>/aboutus/contact">Contact</a>
-  </div> <!-- about_nav -->
-
   <div class="about__content">
     <div class="about__content--hero">
       <?php the_post_thumbnail(); ?>

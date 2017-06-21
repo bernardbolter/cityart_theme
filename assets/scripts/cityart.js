@@ -37,80 +37,33 @@ $('#artists-sorting-header').click(function() {
   $('.artists-index__artists--header').toggleClass('artists-index__artists--header-rotate');
 });
 
-// Code for indicidual artist page gallery
-
-$('#artwork_1').click(function() {
-  $("#artwork_hero_image").fadeOut(function() {
-    $("#artwork_hero_image").attr( 'src', artist_image_data[0][0] ).fadeIn();
-    $("#artwork_hero_title").text( artist_image_data[0][1] ).fadeIn();
-    $("#artwork_hero_info").text( artist_image_data[0][2] ).fadeIn();
-  });
-});
-
-$('#artwork_2').click(function() {
-  $("#artwork_hero_image").fadeOut(function() {
-    $("#artwork_hero_image").attr( 'src', artist_image_data[0][3] ).fadeIn();
-    $("#artwork_hero_title").text( artist_image_data[0][4] ).fadeIn();
-    $("#artwork_hero_info").text( artist_image_data[0][5] ).fadeIn();
-  });
-});
-
-$('#artwork_3').click(function() {
-  $("#artwork_hero_image").fadeOut(function() {
-    $("#artwork_hero_image").attr( 'src', artist_image_data[0][6] ).fadeIn();
-    $("#artwork_hero_title").text( artist_image_data[0][7] ).fadeIn();
-    $("#artwork_hero_info").text( artist_image_data[0][8] ).fadeIn();
-  });
-});
-
-$('#artwork_4').click(function() {
-  $("#artwork_hero_image").fadeOut(function() {
-    $("#artwork_hero_image").attr( 'src', artist_image_data[0][9] ).fadeIn();
-    $("#artwork_hero_title").text( artist_image_data[0][10] ).fadeIn();
-    $("#artwork_hero_info").text( artist_image_data[0][11] ).fadeIn();
-  });
-});
-
-$('#artwork_5').click(function() {
-  $("#artwork_hero_image").fadeOut(function() {
-    $("#artwork_hero_image").attr( 'src', artist_image_data[0][12] ).fadeIn();
-    $("#artwork_hero_title").text( artist_image_data[0][13] ).fadeIn();
-    $("#artwork_hero_info").text( artist_image_data[0][14] ).fadeIn();
-  });
-});
-
-$('#artwork_6').click(function() {
-  $("#artwork_hero_image").fadeOut(function() {
-    $("#artwork_hero_image").attr( 'src', artist_image_data[0][15] ).fadeIn();
-    $("#artwork_hero_title").text( artist_image_data[0][16] ).fadeIn();
-    $("#artwork_hero_info").text( artist_image_data[0][17] ).fadeIn();
-  });
-});
-
-$('#artwork_7').click(function() {
-  $("#artwork_hero_image").fadeOut(function() {
-    $("#artwork_hero_image").attr( 'src', artist_image_data[0][18] ).fadeIn();
-    $("#artwork_hero_title").text( artist_image_data[0][19] ).fadeIn();
-    $("#artwork_hero_info").text( artist_image_data[0][20] ).fadeIn();
-  });
-});
-
-$('#artwork_8').click(function() {
-  $("#artwork_hero_image").fadeOut(function() {
-    $("#artwork_hero_image").attr( 'src', artist_image_data[0][21] ).fadeIn();
-    $("#artwork_hero_title").text( artist_image_data[0][22] ).fadeIn();
-    $("#artwork_hero_info").text( artist_image_data[0][23] ).fadeIn();
-  });
-});
-
-$('#artwork_9').click(function() {
-  $("#artwork_hero_image").fadeOut(function() {
-    $("#artwork_hero_image").attr( 'src', artist_image_data[0][24] ).fadeIn();
-    $("#artwork_hero_title").text( artist_image_data[0][25] ).fadeIn();
-    $("#artwork_hero_info").text( artist_image_data[0][26] ).fadeIn();
-  });
-});
 
 $('ul.artists-index__categories li a').append( "<span class='artists-index__square'></span>");
 
-// INSTAGRAM FEED
+// Code for the member login modal
+$('#member-login-click').click(function() {
+  $('.member-login').addClass('member-login__show');
+});
+
+$('#member-login-close').click(function() {
+  $('.member-login').removeClass('member-login__show');
+})
+
+$("#member-login-button").click(function(e) {
+  e.preventDefault();
+  var mempass = $.trim($('#member-input').val());
+  if(!mempass) {
+    $('.member-login__response').empty();
+    $('.member-login__response').append('enter a password');
+  } else if (mempass == 'member828') {
+     $("#member-form").submit();
+  } else {
+    $('.member-login__response').empty();
+    $('.member-login__response').append('password is incorrect');
+  }
+});
+
+// $("#member-form").submit(function() {
+//   var mempass = $.trim($('#member-input').val());
+//
+// });

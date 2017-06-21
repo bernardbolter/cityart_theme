@@ -9,7 +9,6 @@
 <?php include 'navigation.php' ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-  // IMAGE DATA
   <?php
   $image_1 = get_field('artist_image_1');
   $image_1_url = $image_1['url'];
@@ -69,7 +68,7 @@
       <?php endif; ?>
 
       <?php if( get_field('artist_website') ): ?>
-        <h3 class="artist__header--website"><a href="<?php the_field('artist_website'); ?>"><?php the_field('artist_website'); ?></a></h3>
+        <h3 class="artist__header--website"><a href="http://<?php the_field('artist_website'); ?>"><?php the_field('artist_website'); ?></a></h3>
       <?php endif; ?>
 
   	</div>
@@ -80,50 +79,62 @@
         <h2 id="artwork_hero_title" class="artist__main-image--title"><?php the_field('artist_image_1_title'); ?></h2>
         <p id="artwork_hero_info" class="artist__main-image--info"><?php the_field('artist_image_1_info'); ?></p>
       </div>
-      <div class="artist__thumbs">
-        <a href="#" class="artist__thumbs--image" id="artwork_1">
-          <img src="<?php echo $thumb_1; ?>" />
-        </a>
-        <?php if(!empty($image_2)) { ?>
-        <a href="#" class="artist__thumbs--image" id="artwork_2">
-          <img src="<?php echo $thumb_2; ?>" />
-        </a>
-        <?php } ?>
-        <?php if(!empty($image_3)) { ?>
-        <a href="#" class="artist__thumbs--image" id="artwork_3">
-          <img src="<?php echo $thumb_3; ?>" />
-        </a>
-        <?php } ?>
-        <?php if(!empty($image_4)) { ?>
-        <a href="#" class="artist__thumbs--image" id="artwork_4">
-          <img src="<?php echo $thumb_4; ?>" />
-        </a>
-        <?php } ?>
-        <?php if(!empty($image_5)) { ?>
-        <a href="#" class="artist__thumbs--image" id="artwork_5">
-          <img src="<?php echo $thumb_5; ?>" />
-        </a>
-        <?php } ?>
-        <?php if(!empty($image_6)) { ?>
-        <a href="#" class="artist__thumbs--image" id="artwork_6">
-          <img src="<?php echo $thumb_6; ?>" />
-        </a>
-        <?php } ?>
-        <?php if(!empty($image_7)) { ?>
-        <a href="#" class="artist__thumbs--image" id="artwork_7">
-          <img src="<?php echo $thumb_7; ?>" />
-        </a>
-        <?php } ?>
-        <?php if(!empty($image_8)) { ?>
-        <a href="#" class="artist__thumbs--image" id="artwork_8">
-          <img src="<?php echo $thumb_8; ?>" />
-        </a>
-        <?php } ?>
-        <?php if(!empty($image_9)) { ?>
-        <a href="#" class="artist__thumbs--image" id="artwork_9">
-          <img src="<?php echo $thumb_9; ?>" />
-        </a>
-        <?php } ?>
+      <?php if(!empty($image_2)) { ?>
+        <div class="artist__main-image" id="artwork_hero">
+          <img id="artwork_hero_image" src="<?php echo $image_2_url; ?>" />
+          <h2 id="artwork_hero_title" class="artist__main-image--title"><?php the_field('artist_image_2_title'); ?></h2>
+          <p id="artwork_hero_info" class="artist__main-image--info"><?php the_field('artist_image_2_info'); ?></p>
+        </div>
+      <?php } ?>
+      <?php if(!empty($image_3)) { ?>
+        <div class="artist__main-image" id="artwork_hero">
+          <img id="artwork_hero_image" src="<?php echo $image_3_url; ?>" />
+          <h2 id="artwork_hero_title" class="artist__main-image--title"><?php the_field('artist_image_3_title'); ?></h2>
+          <p id="artwork_hero_info" class="artist__main-image--info"><?php the_field('artist_image_3_info'); ?></p>
+        </div>
+      <?php } ?>
+      <?php if(!empty($image_4)) { ?>
+        <div class="artist__main-image" id="artwork_hero">
+          <img id="artwork_hero_image" src="<?php echo $image_4_url; ?>" />
+          <h2 id="artwork_hero_title" class="artist__main-image--title"><?php the_field('artist_image_4_title'); ?></h2>
+          <p id="artwork_hero_info" class="artist__main-image--info"><?php the_field('artist_image_4_info'); ?></p>
+        </div>
+      <?php } ?>
+      <?php if(!empty($image_5)) { ?>
+        <div class="artist__main-image" id="artwork_hero">
+          <img id="artwork_hero_image" src="<?php echo $image_5_url; ?>" />
+          <h2 id="artwork_hero_title" class="artist__main-image--title"><?php the_field('artist_image_5_title'); ?></h2>
+          <p id="artwork_hero_info" class="artist__main-image--info"><?php the_field('artist_image_5_info'); ?></p>
+        </div>
+      <?php } ?>
+      <?php if(!empty($image_6)) { ?>
+        <div class="artist__main-image" id="artwork_hero">
+          <img id="artwork_hero_image" src="<?php echo $image_6_url; ?>" />
+          <h2 id="artwork_hero_title" class="artist__main-image--title"><?php the_field('artist_image_6_title'); ?></h2>
+          <p id="artwork_hero_info" class="artist__main-image--info"><?php the_field('artist_image_6_info'); ?></p>
+        </div>
+      <?php } ?>
+      <?php if(!empty($image_7)) { ?>
+        <div class="artist__main-image" id="artwork_hero">
+          <img id="artwork_hero_image" src="<?php echo $image_7_url; ?>" />
+          <h2 id="artwork_hero_title" class="artist__main-image--title"><?php the_field('artist_image_7_title'); ?></h2>
+          <p id="artwork_hero_info" class="artist__main-image--info"><?php the_field('artist_image_7_info'); ?></p>
+        </div>
+      <?php } ?>
+      <?php if(!empty($image_8)) { ?>
+        <div class="artist__main-image" id="artwork_hero">
+          <img id="artwork_hero_image" src="<?php echo $image_8_url; ?>" />
+          <h2 id="artwork_hero_title" class="artist__main-image--title"><?php the_field('artist_image_8_title'); ?></h2>
+          <p id="artwork_hero_info" class="artist__main-image--info"><?php the_field('artist_image_8_info'); ?></p>
+        </div>
+      <?php } ?>
+      <?php if(!empty($image_9)) { ?>
+        <div class="artist__main-image" id="artwork_hero">
+          <img id="artwork_hero_image" src="<?php echo $image_8_url; ?>" />
+          <h2 id="artwork_hero_title" class="artist__main-image--title"><?php the_field('artist_image_8_title'); ?></h2>
+          <p id="artwork_hero_info" class="artist__main-image--info"><?php the_field('artist_image_8_info'); ?></p>
+        </div>
+      <?php } ?>
       </div>
     </div>
 
